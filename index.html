@@ -10,6 +10,8 @@
     <link rel="prerender" href="https://bubble.io" />
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
 
     <link rel="shortcut icon" type="image/png"
         href="https://s3.amazonaws.com/appforest_uf/f1537290862707x686935517005622400/FavyLogo.png" />
@@ -48,6 +50,32 @@
 
 
     <style amp-custom>
+        .fixed-container {
+            position: relative;
+            width: 100%;
+            height: 30vh;
+            margin: auto;
+            
+
+
+        }
+
+        amp-img.contain img {
+            object-fit: cover;
+
+        }
+
+        .blog-post-card {
+
+            background: white;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 3px 5px 0px rgba(189, 189, 189, 0.51);
+            -moz-box-shadow: 0px 3px 5px 0px rgba(189, 189, 189, 0.51);
+            box-shadow: 0px 3px 5px 0px rgba(189, 189, 189, 0.51);
+
+
+        }
+
         /* any custom style goes here */
         .logo {
             padding-top: 15px;
@@ -80,10 +108,24 @@
 
         }
 
+        .card-heading {
+            padding: 20px 10px 20px 10px;
+
+        }
+
         @media only screen and (min-width: 900px) {
             .headerbar {
                 display: none;
             }
+
+            .blog-post-card {
+
+                background: white;
+                border-radius: 5px;
+
+
+            }
+
 
             .desktop-menu {
                 display: flex;
@@ -140,7 +182,7 @@
             }
 
             body {
-                background-color: white;
+                background-color: #F7F7F7;
                 font-family: "Roboto", sans-serif;
             }
 
@@ -210,6 +252,10 @@
 
         }
 
+        .card-heading {
+            padding: 20px 10px 20px 10px;
+
+        }
 
         .hamburger {
             padding-left: 20px;
@@ -240,7 +286,7 @@
         }
 
         body {
-            background-color: white;
+            background-color: #F7F7F7;
             font-family: "Roboto", sans-serif;
         }
 
@@ -450,21 +496,31 @@
     <!-- Begin H1 Blog Title Post -->
 
     <div class="entry-content">
+        <amp-list width="500" height="900" layout="responsive" load-more="auto"
+            src="https://ampblog.dev/version-test/api/1.1/obj/Blogpost?constraints=%5B%7B%22key%22%3A%22Blog%22%2C%22constraint_type%22%3A%22equals%22%2C%22value%22%3A%221571629541760x100266787577528320%22%7D%5D" items="response.results">
+            <template type="amp-mustache">
+                <br>
+                <br>
+                <br>
+
+                <div class="blog-post-card">
+                    <div class="fixed-container">
+                        <amp-img class="contain" layout="fill" src="https:{{Main Image}}"></amp-img>
+                    </div>
+                    <div class="card-heading">
+                      <h3> <a href="{{Link}}">{{Main Title}}</a>
+                      </h3> 
+                    </div>
+                </div>
+
+            </template>
+            <div overflow class="list-overflow" style="background-color:red;">
+                See more
+            </div>
+        </amp-list>
 
 
-    </div>
-    <h1>Bubble raises $6M to become the platform for building startups.</h1>
-    <!-- Main Image for Blog Post -->
 
-    <amp-img alt="A view of the sea" src="https://miro.medium.com/max/1933/1*Wtb5CE8P9L7VOdcUQXRUfQ.png" width="375"
-        height="151" layout="responsive">
-    </amp-img>
-    <!-- End Main Image for Blog Post -->
-    <div class="entry-body">
-      <div class="ql-viewer"><p>After 7 years as a bootstrapped startup and more than a quarter of a million users, we’re extremely excited to announce that Bubble just raised its first round of financing. SignalFire is leading the $6.25M seed round along with Neo¹, both of which are funds that represent impressive communities of entrepreneurs. Also investing in the round are a number of individual entre<strong>preneurs, including the artist Nas and the founders of the unicorns Warby Parker, Harry’s, Allbirds, Okta, MuleSoft and Flatiron Health. New York investors BoxGroup and ThirdKind are also joining us.</strong></p><p><br></p><p><strong style="background-color: rgb(255, 255, 255);">Bubble in 2012 because we felt that starting a company was just too costly in terms of engineering resources. Many projects, especially outside major cities, never even get off the ground. Our solutio</strong><span style="background-color: rgb(255, 255, 255);">n was to turn everyone into programmers: Bubble is a programming language designed to be learned in hours instead of months. This was a challenging problem: many projects promised code-free programming, but never to the point where people could build fully-functional products. To achieve this, we invested almost seven years building Bubble and growing our community of entrepreneurs building on top of us.</span></p><p><br></p><p>Over the years, startups using Bubble have got into Y Combinator (Plato), raised $300m and processed over $1B of loans through a Bubble-powered platform (Dividend Finance), or bootstrapped to a $30K MRR within 6 months (Followup Edge). 230,000 apps have been built by more than 270,000 visual developers, and Bubble doubled revenue in 2018 without any marketing. We constantly get emails from our community of users telling us that Bubble completely transformed their careers and that they now identify as “Bubblers”.</p><p><br></p><p><span style="background-color: rgb(255, 255, 255);">After these years of product development, we can now claim comfortably that you can build products like Airbnb, Twitter, Kickstarter or even Facebook on Bubble. We believe we are the only no-code platform that truly makes this possible for everyone. Bubble is open-ended enough that users can define unique experiences and flows, all without code. And if something is missing — it happens — coders can extend the platform with plugins and distribute their work to the community. Entrepreneurs not only build their web product on Bubble, but they also use us to run and host their application. Bubble is a full stack replacement that handles deployment, logging and scaling the infrastructure automatically.</span></p><p>Keeping this promise at scale is a very ambitious goal, and that’s why we’re raising this round. After bootstrapping for 7 years, it is time for us to leverage what we’ve built to open the technology industry to everyone. Our goal is for Bubble to become the primary platform for startup creation, which means growing our engineering team, expanding our infrastructure, and spreading the word about what we’ve created. The first seven years were about taking a vision that everyone said was impossible and making it a reality. The next seven years will be about distributing that reality to the next generation of entrepreneurs!</p><p><br></p><p><span style="background-color: rgb(255, 255, 255);">Contact us at support@bubble.is for any question! Josh, Emmanuel and the Bubble team</span></p></div>
-      <amp-img alt="A view of the sea"                 src="https://s3.amazonaws.com/appforest_uf/f1572113257780x113996892703705000/file.jpeg"                 width="1200" height="900" layout="responsive">             </amp-img> <amp-img alt="A view of the sea"                 src="https://s3.amazonaws.com/appforest_uf/f1572113501564x337689867208844200/file.png"                 width="281" height="180" layout="responsive">             </amp-img> <amp-img alt="A view of the sea"                 src="https://s3.amazonaws.com/appforest_uf/f1572113724290x231330270196254300/file.png"                 width="1546" height="625" layout="responsive">             </amp-img> Text <amp-img alt="A view of the sea"                 src="https://s3.amazonaws.com/appforest_uf/f1572115071905x142193409141172510/file.png"                 width="160" height="126" layout="responsive">             </amp-img>
-    </div>
-    
     </div>
 
     <div class="footer-container">
@@ -477,7 +533,10 @@
 
         </div>
 
-        
+
 </body>
 
 </html>
+
+
+
