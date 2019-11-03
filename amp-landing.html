@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html amp lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+    <meta name="description"
+        content="This is an example of a meta description. This will often show up in search results." />
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <link rel="prerender" href="https://bubble.io" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    <link rel="shortcut icon" type="image/png"
+        href="https://s3.amazonaws.com/appforest_uf/f1537290862707x686935517005622400/FavyLogo.png" />
+
+
+
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "NewsArticle",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://MyDailyWorkouts.co"
+            },
+
+            "headline": "Open-source framework for publishing content",
+            "datePublished": "2019-10-07T12:02:41Z",
+            "image": ["https://miro.medium.com/max/1933/1*Wtb5CE8P9L7VOdcUQXRUfQ.png"],
+            "author": "bobbo",
+            "publisher": {
+                "@id": "mydailyworkouts.co",
+                "@type": "NewsMediaOrganization",
+                "name": "MyDailyWorkoutsCo",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://mydailyworkouts.co/logo",
+                    "width": 344,
+                    "height": 60
+                }
+            },
+            "dateModified": "2019-10-07T12:02:41Z"
+        }
+    </script>
+
+
+
+    <style amp-custom>
+        /* any custom style goes here */
+        .logo {
+            padding-top: 15px;
+            max-width: 120px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .desktop-menu {
+            display: none;
+            background: #353535;
+            font-size: 26px;
+        }
+
+
+        .headerbar {
+
+            position: fixed;
+            width: 70px;
+            border-radius: 0px 10px 10px 0px;
+            height: 55px;
+            background-color: white;
+            -webkit-box-shadow: 3px 4px 23px -11px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 3px 4px 23px -11px rgba(0, 0, 0, 0.75);
+            box-shadow: 3px 4px 23px -11px rgba(0, 0, 0, 0.75);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+
+        }
+
+        @media only screen and (min-width: 900px) {
+            .headerbar {
+                display: none;
+            }
+
+            .desktop-menu {
+                display: flex;
+                background: #353535;
+                height: 1.5vh;
+                color: white;
+                align-items: center;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 30px;
+                padding-right: 30px;
+
+
+
+
+            }
+
+
+            .desktop-menu>a {
+                width: 100%;
+                margin: 10px;
+                text-align: center;
+                line-height: 100%;
+                font-size: 20px;
+                text-decoration: none;
+                color: white;
+            }
+
+            .hamburger {
+                padding-left: 20px;
+                font-size: 36px;
+            }
+
+            .sidebar {
+                width: 150%;
+                padding: 10px;
+                margin: 0;
+            }
+
+            .sidebar>li {
+                list-style: none;
+                margin-bottom: 10px;
+                font-size: 30px;
+                text-align: left;
+            }
+
+            .sidebar a {
+                text-decoration: none;
+            }
+
+            .close-sidebar {
+                font-size: 2.5em;
+                padding-left: 5px;
+            }
+
+            body {
+                background-color: white;
+                font-family: "Roboto", sans-serif;
+            }
+
+            h1 {
+                text-align: left;
+                line-height: 1.3;
+                padding-top: 10px;
+                max-width: 680px;
+                margin: auto;
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+            }
+
+            .entry-content {
+                text-align: center;
+                max-width: 680px;
+                margin: auto;
+                padding: 30px;
+            }
+
+            .entry-body {
+                text-align: left;
+                font-size: medium;
+                max-width: 680px;
+                margin: auto;
+                padding-top: 20px;
+                line-height: 1.8;
+                padding: 30px;
+
+            }
+
+            .footer-container {
+                max-width: 1000px;
+                margin: auto;
+                height: auto;
+                background-color: #353535;
+                text-align: center;
+                display: flex;
+                align-items: center;
+
+
+            }
+
+            .footer-text {
+                font-size: larger;
+                color: white;
+                padding: 20px;
+                margin: auto;
+                background-color: 353535;
+                width: 100%;
+                text-decoration: none;
+
+
+            }
+
+            .footer-text a {
+                color: #f2f2f2;
+                text-align: center;
+                padding: 10px;
+                text-decoration: none;
+                font-size: 17px;
+
+
+
+            }
+
+        }
+
+
+        .hamburger {
+            padding-left: 20px;
+            font-size: 36px;
+        }
+
+        .sidebar {
+            width: 300px;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .sidebar>li {
+            list-style: none;
+            margin-bottom: 10px;
+            font-size: 30px;
+            text-align: left;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: red;
+        }
+
+        .close-sidebar {
+            font-size: 2.5em;
+            padding-left: 5px;
+        }
+
+        body {
+            background-color: white;
+            font-family: "Roboto", sans-serif;
+        }
+
+        h1 {
+            text-align: left;
+            line-height: 1.3;
+            padding-top: 10px;
+            max-width: 680px;
+            margin: auto;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+
+
+
+        }
+
+        .entry-content {
+            text-align: center;
+            max-width: 680px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .entry-body {
+            text-align: left;
+            font-size: medium;
+            max-width: 680px;
+            margin: auto;
+            padding-top: 20px;
+            line-height: 1.8;
+            padding: 30px;
+
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: auto;
+            height: auto;
+            background-color: #353535;
+            text-align: center;
+            display: flex;
+            align-items: center;
+
+
+        }
+
+        .footer-text {
+            font-size: larger;
+            color: white;
+            padding: 20px;
+            margin: auto;
+            background-color: 353535;
+            width: 100%;
+
+
+        }
+
+        .footer-text a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 17px;
+
+
+
+        }
+
+        amp-img {
+            background-color: gray;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 680px;
+
+
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" />
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        }
+
+        @-webkit-keyframes -amp-start {
+            from {
+                visibility: hidden;
+            }
+
+            to {
+                visibility: visible;
+            }
+        }
+
+        @-moz-keyframes -amp-start {
+            from {
+                visibility: hidden;
+            }
+
+            to {
+                visibility: visible;
+            }
+        }
+
+        @-ms-keyframes -amp-start {
+            from {
+                visibility: hidden;
+            }
+
+            to {
+                visibility: visible;
+            }
+        }
+
+        @-o-keyframes -amp-start {
+            from {
+                visibility: hidden;
+            }
+
+            to {
+                visibility: visible;
+            }
+        }
+
+        @keyframes -amp-start {
+            from {
+                visibility: hidden;
+            }
+
+            to {
+                visibility: visible;
+            }
+        }
+    </style>
+    <noscript>
+        <style amp-boilerplate>
+            body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none;
+            }
+        </style>
+    </noscript>
+    <link rel="canonical" href="https://amp-blog-builder.bubbleapps.io/Amp-Blog">
+
+    <title>
+        Bubble raises $6M to become the platform for building startups.
+    </title>
+</head>
+
+<body>
+
+    <div class="desktop-menu">
+
+        <a href="https://bubble.io/learnmore">Learn more</a>
+        <a href="https://bubble.io/pricing">Pricing</a>
+        <a href="https://bubble.io/showcase">Showcase</a>
+        <a href="https://bubble.io/documentation">Documentation</a>
+        <a href="https://bubble.io/community">Community</a>
+
+
+
+
+
+
+    </div>
+    <header class="headerbar" on="tap:sidebar1.toggle" role="button" tabindex="0">
+
+
+        <div class="hamburger">
+            ☰
+        </div>
+
+    </header>
+    <div class="logo">
+        <a href="https:/bubble.io">
+
+
+            <amp-img alt="A view of the sea"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRioXCogUR3gIotMAowALAZDmG8bBBSr7kjzaW3xt6SYHyoaPvEqA"
+                width="800" height="184" layout="responsive">
+            </amp-img>
+        </a>
+    </div>
+    <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
+        <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">
+            ✕
+
+
+        </div>
+        <ul class="sidebar">
+            <li><a href="https://bubble.io/learnmore">Learn more</a></li>
+            <li><a href="https://bubble.io/pricing">Pricing</a></li>
+            <li><a href="https://bubble.io/showcase">Showcase</a></li>
+            <li><a href="https://bubble.io/documentation">Documentation</a></li>
+            <li><a href="https://bubble.io/community">Community</a></li>
+
+
+        </ul>
+    </amp-sidebar>
+
+    <!-- Begin H1 Blog Title Post -->
+
+    <div class="entry-content">
+
+
+    </div>
+    <h1>Bubble raises $6M to become the platform for building startups.</h1>
+    <!-- Main Image for Blog Post -->
+
+    <amp-img alt="A view of the sea" src="https://miro.medium.com/max/1933/1*Wtb5CE8P9L7VOdcUQXRUfQ.png" width="375"
+        height="151" layout="responsive">
+    </amp-img>
+    <!-- End Main Image for Blog Post -->
+    <div class="entry-body">
+      <div class="ql-viewer"><p>After 7 years as a bootstrapped startup and more than a quarter of a million users, we’re extremely excited to announce that Bubble just raised its first round of financing. SignalFire is leading the $6.25M seed round along with Neo¹, both of which are funds that represent impressive communities of entrepreneurs. Also investing in the round are a number of individual entre<strong>preneurs, including the artist Nas and the founders of the unicorns Warby Parker, Harry’s, Allbirds, Okta, MuleSoft and Flatiron Health. New York investors BoxGroup and ThirdKind are also joining us.</strong></p><p><br></p><p><strong style="background-color: rgb(255, 255, 255);">Bubble in 2012 because we felt that starting a company was just too costly in terms of engineering resources. Many projects, especially outside major cities, never even get off the ground. Our solutio</strong><span style="background-color: rgb(255, 255, 255);">n was to turn everyone into programmers: Bubble is a programming language designed to be learned in hours instead of months. This was a challenging problem: many projects promised code-free programming, but never to the point where people could build fully-functional products. To achieve this, we invested almost seven years building Bubble and growing our community of entrepreneurs building on top of us.</span></p><p><br></p><p>Over the years, startups using Bubble have got into Y Combinator (Plato), raised $300m and processed over $1B of loans through a Bubble-powered platform (Dividend Finance), or bootstrapped to a $30K MRR within 6 months (Followup Edge). 230,000 apps have been built by more than 270,000 visual developers, and Bubble doubled revenue in 2018 without any marketing. We constantly get emails from our community of users telling us that Bubble completely transformed their careers and that they now identify as “Bubblers”.</p><p><br></p><p><span style="background-color: rgb(255, 255, 255);">After these years of product development, we can now claim comfortably that you can build products like Airbnb, Twitter, Kickstarter or even Facebook on Bubble. We believe we are the only no-code platform that truly makes this possible for everyone. Bubble is open-ended enough that users can define unique experiences and flows, all without code. And if something is missing — it happens — coders can extend the platform with plugins and distribute their work to the community. Entrepreneurs not only build their web product on Bubble, but they also use us to run and host their application. Bubble is a full stack replacement that handles deployment, logging and scaling the infrastructure automatically.</span></p><p>Keeping this promise at scale is a very ambitious goal, and that’s why we’re raising this round. After bootstrapping for 7 years, it is time for us to leverage what we’ve built to open the technology industry to everyone. Our goal is for Bubble to become the primary platform for startup creation, which means growing our engineering team, expanding our infrastructure, and spreading the word about what we’ve created. The first seven years were about taking a vision that everyone said was impossible and making it a reality. The next seven years will be about distributing that reality to the next generation of entrepreneurs!</p><p><br></p><p><span style="background-color: rgb(255, 255, 255);">Contact us at support@bubble.is for any question! Josh, Emmanuel and the Bubble team</span></p></div>
+      <amp-img alt="A view of the sea"                 src="https://s3.amazonaws.com/appforest_uf/f1572113257780x113996892703705000/file.jpeg"                 width="1200" height="900" layout="responsive">             </amp-img> <amp-img alt="A view of the sea"                 src="https://s3.amazonaws.com/appforest_uf/f1572113501564x337689867208844200/file.png"                 width="281" height="180" layout="responsive">             </amp-img> <amp-img alt="A view of the sea"                 src="https://s3.amazonaws.com/appforest_uf/f1572113724290x231330270196254300/file.png"                 width="1546" height="625" layout="responsive">             </amp-img> Text <amp-img alt="A view of the sea"                 src="https://s3.amazonaws.com/appforest_uf/f1572115071905x142193409141172510/file.png"                 width="160" height="126" layout="responsive">             </amp-img>
+    </div>
+    
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-text">
+            <a href="https://bubble.io/about">About</a>
+            <a href="https://bubble.io/templates">Templates</a>
+            <a href="https://bubble.io/plugins">Plugins</a>
+            <a href="https://bubble.io/contact">Contact</a>
+
+
+        </div>
+
+        
+</body>
+
+</html>

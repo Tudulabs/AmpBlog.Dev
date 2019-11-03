@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html amp lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+    <meta name="description"
+        content="This is an example of a meta description. This will often show up in search results." />
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <link rel="prerender" href="https://bubble.io" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+
+    <link rel="shortcut icon" type="image/png"
+        href="https://s3.amazonaws.com/appforest_uf/f1537290862707x686935517005622400/FavyLogo.png" />
+
+
+
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "NewsArticle",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://MyDailyWorkouts.co"
+            },
+
+            "headline": "Open-source framework for publishing content",
+            "datePublished": "2019-10-07T12:02:41Z",
+            "image": ["https://miro.medium.com/max/1933/1*Wtb5CE8P9L7VOdcUQXRUfQ.png"],
+            "author": "bobbo",
+            "publisher": {
+                "@id": "mydailyworkouts.co",
+                "@type": "NewsMediaOrganization",
+                "name": "MyDailyWorkoutsCo",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://mydailyworkouts.co/logo",
+                    "width": 344,
+                    "height": 60
+                }
+            },
+            "dateModified": "2019-10-07T12:02:41Z"
+        }
+    </script>
+
+
+
+    <style amp-custom>
+        .fixed-container {
+            position: relative;
+            width: 100%;
+            height: 30vh;
+            margin: auto;
+            
+
+
+        }
+
+        amp-img.contain img {
+            object-fit: cover;
+
+        }
+
+        .blog-post-card {
+
+            background: white;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 3px 5px 0px rgba(189, 189, 189, 0.51);
+            -moz-box-shadow: 0px 3px 5px 0px rgba(189, 189, 189, 0.51);
+            box-shadow: 0px 3px 5px 0px rgba(189, 189, 189, 0.51);
+
+
+        }
+
+        /* any custom style goes here */
+        .logo {
+            padding-top: 15px;
+            max-width: 120px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .desktop-menu {
+            display: none;
+            background: #353535;
+            font-size: 26px;
+        }
+
+
+        .headerbar {
+
+            position: fixed;
+            width: 70px;
+            border-radius: 0px 10px 10px 0px;
+            height: 55px;
+            background-color: white;
+            -webkit-box-shadow: 3px 4px 23px -11px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 3px 4px 23px -11px rgba(0, 0, 0, 0.75);
+            box-shadow: 3px 4px 23px -11px rgba(0, 0, 0, 0.75);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .card-heading {
+            padding: 20px 10px 20px 10px;
+
+        }
+
+        @media only screen and (min-width: 900px) {
+            .headerbar {
+                display: none;
+            }
+
+            .blog-post-card {
+
+                background: white;
+                border-radius: 5px;
+
+
+            }
+
+
+            .desktop-menu {
+                display: flex;
+                background: #353535;
+                height: 1.5vh;
+                color: white;
+                align-items: center;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 30px;
+                padding-right: 30px;
+
+
+
+
+            }
+
+
+            .desktop-menu>a {
+                width: 100%;
+                margin: 10px;
+                text-align: center;
+                line-height: 100%;
+                font-size: 20px;
+                text-decoration: none;
+                color: white;
+            }
+
+            .hamburger {
+                padding-left: 20px;
+                font-size: 36px;
+            }
+
+            .sidebar {
+                width: 150%;
+                padding: 10px;
+                margin: 0;
+            }
+
+            .sidebar>li {
+                list-style: none;
+                margin-bottom: 10px;
+                font-size: 30px;
+                text-align: left;
+            }
+
+            .sidebar a {
+                text-decoration: none;
+            }
+
+            .close-sidebar {
+                font-size: 2.5em;
+                padding-left: 5px;
+            }
+
+            body {
+                background-color: #F7F7F7;
+                font-family: "Roboto", sans-serif;
+            }
+
+            h1 {
+                text-align: left;
+                line-height: 1.3;
+                padding-top: 10px;
+                max-width: 680px;
+                margin: auto;
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+            }
+
+            .entry-content {
+                text-align: center;
+                max-width: 680px;
+                margin: auto;
+                padding: 30px;
+            }
+
+            .entry-body {
+                text-align: left;
+                font-size: medium;
+                max-width: 680px;
+                margin: auto;
+                padding-top: 20px;
+                line-height: 1.8;
+                padding: 30px;
+
+            }
+
+            .footer-container {
+                max-width: 1000px;
+                margin: auto;
+                height: auto;
+                background-color: #353535;
+                text-align: center;
+                display: flex;
+                align-items: center;
+
+
+            }
+
+            .footer-text {
+                font-size: larger;
+                color: white;
+                padding: 20px;
+                margin: auto;
+                background-color: 353535;
+                width: 100%;
+                text-decoration: none;
+
+
+            }
+
+            .footer-text a {
+                color: #f2f2f2;
+                text-align: center;
+                padding: 10px;
+                text-decoration: none;
+                font-size: 17px;
+
+
+
+            }
+
+        }
+
+        .card-heading {
+            padding: 20px 10px 20px 10px;
+
+        }
+
+        .hamburger {
+            padding-left: 20px;
+            font-size: 36px;
+        }
+
+        .sidebar {
+            width: 300px;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .sidebar>li {
+            list-style: none;
+            margin-bottom: 10px;
+            font-size: 30px;
+            text-align: left;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: red;
+        }
+
+        .close-sidebar {
+            font-size: 2.5em;
+            padding-left: 5px;
+        }
+
+        body {
+            background-color: #F7F7F7;
+            font-family: "Roboto", sans-serif;
+        }
+
+        h1 {
+            text-align: left;
+            line-height: 1.3;
+            padding-top: 10px;
+            max-width: 680px;
+            margin: auto;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+
+
+
+        }
+
+        .entry-content {
+            text-align: center;
+            max-width: 680px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .entry-body {
+            text-align: left;
+            font-size: medium;
+            max-width: 680px;
+            margin: auto;
+            padding-top: 20px;
+            line-height: 1.8;
+            padding: 30px;
+
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: auto;
+            height: auto;
+            background-color: #353535;
+            text-align: center;
+            display: flex;
+            align-items: center;
+
+
+        }
+
+        .footer-text {
+            font-size: larger;
+            color: white;
+            padding: 20px;
+            margin: auto;
+            background-color: 353535;
+            width: 100%;
+
+
+        }
+
+        .footer-text a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 17px;
+
+
+
+        }
+
+        amp-img {
+            background-color: gray;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 680px;
+
+
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" />
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        }
+
+        @-webkit-keyframes -amp-start {
+            from {
+                visibility: hidden;
+            }
+
+            to {
+                visibility: visible;
+            }
+        }
+
+        @-moz-keyframes -amp-start {
+            from {
+                visibility: hidden;
+            }
+
+            to {
+                visibility: visible;
+            }
+        }
+
+        @-ms-keyframes -amp-start {
+            from {
+                visibility: hidden;
+            }
+
+            to {
+                visibility: visible;
+            }
+        }
+
+        @-o-keyframes -amp-start {
+            from {
+                visibility: hidden;
+            }
+
+            to {
+                visibility: visible;
+            }
+        }
+
+        @keyframes -amp-start {
+            from {
+                visibility: hidden;
+            }
+
+            to {
+                visibility: visible;
+            }
+        }
+    </style>
+    <noscript>
+        <style amp-boilerplate>
+            body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none;
+            }
+        </style>
+    </noscript>
+    <link rel="canonical" href="https://amp-blog-builder.bubbleapps.io/Amp-Blog">
+
+    <title>
+        Bubble raises $6M to become the platform for building startups.
+    </title>
+</head>
+
+<body>
+
+    <div class="desktop-menu">
+
+        <a href="https://bubble.io/learnmore">Learn more</a>
+        <a href="https://bubble.io/pricing">Pricing</a>
+        <a href="https://bubble.io/showcase">Showcase</a>
+        <a href="https://bubble.io/documentation">Documentation</a>
+        <a href="https://bubble.io/community">Community</a>
+
+
+
+
+
+
+    </div>
+    <header class="headerbar" on="tap:sidebar1.toggle" role="button" tabindex="0">
+
+
+        <div class="hamburger">
+            ☰
+        </div>
+
+    </header>
+    <div class="logo">
+        <a href="https:/bubble.io">
+
+
+            <amp-img alt="A view of the sea"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRioXCogUR3gIotMAowALAZDmG8bBBSr7kjzaW3xt6SYHyoaPvEqA"
+                width="800" height="184" layout="responsive">
+            </amp-img>
+        </a>
+    </div>
+    <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
+        <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">
+            ✕
+
+
+        </div>
+        <ul class="sidebar">
+            <li><a href="https://bubble.io/learnmore">Learn more</a></li>
+            <li><a href="https://bubble.io/pricing">Pricing</a></li>
+            <li><a href="https://bubble.io/showcase">Showcase</a></li>
+            <li><a href="https://bubble.io/documentation">Documentation</a></li>
+            <li><a href="https://bubble.io/community">Community</a></li>
+
+
+        </ul>
+    </amp-sidebar>
+
+    <!-- Begin H1 Blog Title Post -->
+
+    <div class="entry-content">
+        <amp-list width="500" height="900" layout="responsive" load-more="auto"
+            src="https://ampblog.dev/version-test/api/1.1/obj/Blogpost?constraints=%5B%7B%22key%22%3A%22Blog%22%2C%22constraint_type%22%3A%22equals%22%2C%22value%22%3A%221571629541760x100266787577528320%22%7D%5D" items="response.results">
+            <template type="amp-mustache">
+                <br>
+                <br>
+                <br>
+
+                <div class="blog-post-card">
+                    <div class="fixed-container">
+                        <amp-img class="contain" layout="fill" src="https:{{Main Image}}"></amp-img>
+                    </div>
+                    <div class="card-heading">
+                      <h3> <a href="{{Link}}">{{Main Title}}</a>
+                      </h3> 
+                    </div>
+                </div>
+
+            </template>
+            <div overflow class="list-overflow" style="background-color:red;">
+                See more
+            </div>
+        </amp-list>
+
+
+
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-text">
+            <a href="https://bubble.io/about">About</a>
+            <a href="https://bubble.io/templates">Templates</a>
+            <a href="https://bubble.io/plugins">Plugins</a>
+            <a href="https://bubble.io/contact">Contact</a>
+
+
+        </div>
+
+
+</body>
+
+</html>
+
+
+
